@@ -34,7 +34,12 @@ include(":app")
 
 include(":lint")
 include(":domain")
+
 include(":data:datastore")
 include(":data:local")
 include(":data:network")
 include(":data:source")
+
+include(":core:uikit")
+include(":core:common")
+include(":core:testing")
