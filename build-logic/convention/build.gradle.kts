@@ -62,7 +62,7 @@ gradlePlugin {
         }
         register("androidHilt") {
             id = "foodly.android.hilt"
-            implementationClass = "HiltConventionPlugin"
+            implementationClass = "AndroidHiltConventionPlugin"
         }
         register("androidRoom") {
             id = "foodly.android.room"
