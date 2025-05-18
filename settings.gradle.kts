@@ -43,3 +43,6 @@ include(":data:source")
 include(":core:uikit")
 include(":core:common")
 include(":core:testing")
+
+include(":feature:home")
+include(":feature:favourite")

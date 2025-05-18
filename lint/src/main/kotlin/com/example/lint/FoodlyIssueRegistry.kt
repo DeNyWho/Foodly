@@ -2,6 +2,8 @@ package com.example.lint
 
 import com.android.tools.lint.client.api.IssueRegistry
 import com.android.tools.lint.client.api.Vendor
+import com.android.tools.lint.detector.api.CURRENT_API
+import com.example.lint.designsystem.DesignSystemDetector
 
 class FoodlyIssueRegistry : IssueRegistry() {
 
