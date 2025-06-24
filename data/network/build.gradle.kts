@@ -25,7 +25,6 @@ dependencies {
     implementation(libs.ktor.client.logging.jvm)
     implementation(libs.ktor.client.serialization)
     implementation(libs.ktor.client.android)
-    implementation(libs.ktor.client.apache)
     implementation(libs.ktor.client.okhttp)
     implementation(libs.slf4j.simple)
 

@@ -28,6 +28,8 @@ android {
     packaging {
         resources {
             excludes.add("/META-INF/{AL2.0,LGPL2.1}")
+            excludes.add("/META-INF/DEPENDENCIES")
+            excludes.add("/META-INF/INDEX.LIST")
         }
     }
 
@@ -49,7 +51,6 @@ dependencies {
     implementation(projects.core.common)
 
     implementation(libs.androidx.activity.compose)
-    implementation(libs.androidx.compose.material3.adaptive)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.hilt.navigation.compose)
@@ -72,5 +73,5 @@ dependencies {
 }
 
 dependencyGuard {
-    configuration("prodReleaseRuntimeClasspath")
+    configuration("releaseRuntimeClasspath")
 }

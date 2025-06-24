@@ -14,7 +14,6 @@ dependencies {
     implementation(projects.domain)
     implementation(libs.paging.runtime)
     implementation(libs.room.paging)
-    implementation(libs.kotlinx.datetime)
 
     testImplementation(libs.junit)
 }

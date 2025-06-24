@@ -46,3 +46,5 @@ include(":core:testing")
 
 include(":feature:home")
 include(":feature:favourite")
+include(":feature:detail")
+include(":feature:explore")

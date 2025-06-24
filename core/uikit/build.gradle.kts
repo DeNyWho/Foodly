@@ -32,8 +32,6 @@ dependencies {
     api(libs.androidx.compose.ui.util)
     api(libs.androidx.core.ktx)
 
-    api(libs.toolbar.compose)
-
     api(libs.shimmer.compose)
 
     api(libs.coil.kt.compose)
