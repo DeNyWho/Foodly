@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.foodly.android.application)
     alias(libs.plugins.foodly.android.application.compose)
-    alias(libs.plugins.foodly.android.hilt)
 }
 
 android {
@@ -53,23 +52,15 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
-    implementation(libs.androidx.hilt.navigation.compose)
     implementation(libs.androidx.lifecycle.runtimeCompose)
     implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.kotlinx.coroutines.guava)
 
-    ksp(libs.hilt.compiler)
-
     debugImplementation(libs.androidx.compose.ui.testManifest)
-
-    kspTest(libs.hilt.compiler)
-
-    testImplementation(libs.hilt.android.testing)
 
     androidTestImplementation(libs.androidx.test.espresso.core)
     androidTestImplementation(libs.androidx.navigation.testing)
-    androidTestImplementation(libs.hilt.android.testing)
 }
 
 dependencyGuard {

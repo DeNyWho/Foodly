@@ -1,6 +1,6 @@
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
-import com.example.buildlogic.convention.configureKotlinAndroid
+import com.example.foodly.buildlogic.convention.configureKotlinAndroid
 import com.example.buildlogic.convention.configurePrintApksTask
 import com.example.buildlogic.convention.disableUnnecessaryAndroidTests
 import com.example.buildlogic.convention.libs

@@ -60,9 +60,9 @@ gradlePlugin {
             id = "foodly.android.test"
             implementationClass = "AndroidTestConventionPlugin"
         }
-        register("androidHilt") {
-            id = "foodly.android.hilt"
-            implementationClass = "AndroidHiltConventionPlugin"
+        register("androidKoin") {
+            id = "foodly.android.koin"
+            implementationClass = "AndroidKoinConventionPlugin"
         }
         register("androidRoom") {
             id = "foodly.android.room"

@@ -1,5 +1,5 @@
 import com.android.build.gradle.TestExtension
-import com.example.buildlogic.convention.configureKotlinAndroid
+import com.example.foodly.buildlogic.convention.configureKotlinAndroid
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure

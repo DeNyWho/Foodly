@@ -15,7 +15,6 @@ dependencies {
     debugApi(libs.androidx.compose.ui.testManifest)
 
     implementation(libs.androidx.test.rules)
-    implementation(libs.hilt.android.testing)
     implementation(libs.kotlinx.coroutines.test)
 
     androidTestImplementation(libs.androidx.junit)

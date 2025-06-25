@@ -1,6 +1,6 @@
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
-import com.example.buildlogic.convention.configureKotlinAndroid
+import com.example.foodly.buildlogic.convention.configureKotlinAndroid
 import com.example.buildlogic.convention.configurePrintApksTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project

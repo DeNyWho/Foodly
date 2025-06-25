@@ -1,4 +1,4 @@
-import com.example.buildlogic.convention.configureKotlinJvm
+import com.example.foodly.buildlogic.convention.configureKotlinJvm
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 

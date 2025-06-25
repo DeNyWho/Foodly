@@ -6,7 +6,6 @@ androidxCore = "1.16.0"
 androidxCoreSplashscreen = "1.0.1"
 androidxDataStore = "1.1.7"
 androidxEspresso = "3.6.1"
-androidxHiltNavigationCompose = "1.2.0"
 androidxLifecycle = "2.9.1"
 androidxMacroBenchmark = "1.3.4"
 androidxMetrics = "1.0.0-beta02"
@@ -18,34 +17,33 @@ androidxTestRunner = "1.6.2"
 androidxTracing = "1.3.0"
 androidxUiAutomator = "2.3.0"
 androidDesugarJdkLibs = "2.1.5"
-androidGradlePlugin = "8.10.1"
-androidTools = "31.10.1"
+androidGradlePlugin = "8.11.0"
+androidTools = "31.11.0"
 coil = "2.7.0"
 dependencyGuard = "0.5.0"
 firebaseBom = "33.15.0"
 firebaseCrashlyticsPlugin = "3.0.4"
 gmsPlugin = "4.4.2"
-hilt = "2.54"
-hiltExt = "1.2.0"
 junit = "4.13.2"
 junitVersion = "1.2.1"
-kotlin = "2.1.0"
-kotlinxCollectionsImmutable = "0.3.5"
-kotlinxCoroutines = "1.10.1"
-kotlinxSerializationJson = "1.8.0"
-ksp = "2.1.0-1.0.29"
-ktorClient = "3.0.0"
-lottie = "6.6.2"
+kotlin = "2.2.0"
+kotlinxCollectionsImmutable = "0.4.0"
+kotlinxCoroutines = "1.10.2"
+kotlinxSerializationJson = "1.8.1"
+ksp = "2.2.0-2.0.2"
+ktorClient = "3.1.3"
+koin = "4.1.0"
+lottie = "6.6.7"
 material = "1.12.0"
-moduleGraph = "2.7.1"
+moduleGraph = "2.9.0"
 paging = "3.3.6"
-protobuf = "4.29.2"
-protobufPlugin = "0.9.4"
+protobuf = "4.31.1"
+protobufPlugin = "0.9.5"
 room = "2.7.2"
 secrets = "2.0.1"
-shimmerCompose = "1.3.1"
-slf4j-simple = "2.0.7"
-profileinstaller = "1.4.1"
+shimmerCompose = "1.3.3"
+slf4j-simple = "2.0.17"
+voyager = "1.1.0-beta03"
 
 [libraries]
 android-desugarJdkLibs = { group = "com.android.tools", name = "desugar_jdk_libs", version.ref = "androidDesugarJdkLibs" }
@@ -67,7 +65,6 @@ androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = 
 androidx-core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "androidxCoreSplashscreen" }
 androidx-dataStore-core = { group = "androidx.datastore", name = "datastore", version.ref = "androidxDataStore" }
 androidx-dataStore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "androidxDataStore" }
-androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "androidxLifecycle" }
 androidx-lifecycle-runtimeTesting = { group = "androidx.lifecycle", name = "lifecycle-runtime-testing", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
@@ -86,18 +83,13 @@ coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "
 firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
 firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
 firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
-hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
-hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
-hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
-hilt-core = { group = "com.google.dagger", name = "hilt-core", version.ref = "hilt" }
-hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
-hilt-ext-work = { group = "androidx.hilt", name = "hilt-work", version.ref = "hiltExt" }
 kotlin-stdlib = { group = "org.jetbrains.kotlin", name = "kotlin-stdlib-jdk8", version.ref = "kotlin" }
 kotlinx-collections-immutable = { module = "org.jetbrains.kotlinx:kotlinx-collections-immutable", version.ref = "kotlinxCollectionsImmutable" }
 kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 kotlinx-serialization-protobuf = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf-jvm", version.ref = "kotlinxSerializationJson" }
+koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktorClient" }
 ktor-client-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktorClient" }
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktorClient" }
@@ -119,6 +111,12 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j-simple" }
 shimmer-compose = { group = "com.valentinilk.shimmer", name = "compose-shimmer", version.ref = "shimmerCompose" }
+voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager"}
+voyager-screenmodel = { group = "cafe.adriel.voyager", name = "voyager-screenmodel", version.ref = "voyager"}
+voyager-bottomsheet = { group = "cafe.adriel.voyager", name = "voyager-bottom-sheet-navigator", version.ref = "voyager"}
+voyager-tabnavigator = { group = "cafe.adriel.voyager", name = "voyager-tab-navigator", version.ref = "voyager"}
+voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager"}
+voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager"}
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }
@@ -131,7 +129,6 @@ room-gradlePlugin = { group = "androidx.room", name = "room-gradle-plugin", vers
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
-androidx-profileinstaller = { group = "androidx.profileinstaller", name = "profileinstaller", version.ref = "profileinstaller" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "androidGradlePlugin" }
@@ -143,7 +140,6 @@ compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
 dependencyGuard = { id = "com.dropbox.dependency-guard", version.ref = "dependencyGuard" }
 firebase-crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "firebaseCrashlyticsPlugin" }
 gms = { id = "com.google.gms.google-services", version.ref = "gmsPlugin" }
-hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "kotlin" }
 kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
@@ -157,11 +153,11 @@ foodly-android-application = { id = "foodly.android.application" }
 foodly-android-application-compose = { id = "foodly.android.application.compose" }
 foodly-android-application-firebase = { id = "foodly.android.application.firebase" }
 foodly-android-feature = { id = "foodly.android.feature" }
-foodly-android-hilt = { id = "foodly.android.hilt" }
 foodly-android-library = { id = "foodly.android.library" }
 foodly-android-library-compose = { id = "foodly.android.library.compose" }
 foodly-android-lint = { id = "foodly.android.lint" }
 foodly-android-room = { id = "foodly.android.room" }
+foodly-android-koin = { id = "foodly.android.koin" }
 foodly-android-test = { id = "foodly.android.test" }
 foodly-jvm-library = { id = "foodly.jvm.library" }
 kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }

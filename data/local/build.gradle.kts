@@ -1,6 +1,6 @@
 plugins {
     alias(libs.plugins.foodly.android.library)
-    alias(libs.plugins.foodly.android.hilt)
+    alias(libs.plugins.foodly.android.koin)
     alias(libs.plugins.foodly.android.room)
     alias(libs.plugins.kotlin.serialization)
 }
