@@ -1,7 +1,7 @@
 import com.android.build.api.dsl.ApplicationExtension
 import com.android.build.api.variant.ApplicationAndroidComponentsExtension
 import com.example.foodly.buildlogic.convention.configureKotlinAndroid
-import com.example.buildlogic.convention.configurePrintApksTask
+import com.example.foodly.buildlogic.convention.configurePrintApksTask
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -17,7 +17,7 @@ class AndroidApplicationConventionPlugin : Plugin<Project> {
 
             extensions.configure<ApplicationExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 35
+                defaultConfig.targetSdk = 36
                 defaultConfig.minSdk = 26
                 testOptions.animationsDisabled = true
             }

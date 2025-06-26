@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.example.buildlogic.convention.libs
+import com.example.foodly.buildlogic.convention.libs
 import com.google.firebase.crashlytics.buildtools.gradle.CrashlyticsExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project

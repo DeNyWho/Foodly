@@ -1,4 +1,4 @@
-package com.example.buildlogic.convention
+package com.example.foodly.buildlogic.convention
 
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import org.gradle.api.Project

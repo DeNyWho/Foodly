@@ -1,5 +1,5 @@
 import androidx.room.gradle.RoomExtension
-import com.example.buildlogic.convention.libs
+import com.example.foodly.buildlogic.convention.libs
 import com.google.devtools.ksp.gradle.KspExtension
 import org.gradle.api.Plugin
 import org.gradle.api.Project

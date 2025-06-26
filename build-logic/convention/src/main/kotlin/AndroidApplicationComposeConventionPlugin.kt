@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.ApplicationExtension
-import com.example.buildlogic.convention.configureAndroidCompose
+import com.example.foodly.buildlogic.convention.configureAndroidCompose
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.apply

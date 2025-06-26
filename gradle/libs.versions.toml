@@ -9,7 +9,6 @@ androidxEspresso = "3.6.1"
 androidxLifecycle = "2.9.1"
 androidxMacroBenchmark = "1.3.4"
 androidxMetrics = "1.0.0-beta02"
-androidxNavigation = "2.9.0"
 androidxTestCore = "1.6.1"
 androidxTestExt = "1.2.1"
 androidxTestRules = "1.6.1"
@@ -69,8 +68,6 @@ androidx-lifecycle-runtimeCompose = { group = "androidx.lifecycle", name = "life
 androidx-lifecycle-runtimeTesting = { group = "androidx.lifecycle", name = "lifecycle-runtime-testing", version.ref = "androidxLifecycle" }
 androidx-lifecycle-viewModelCompose = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-compose", version.ref = "androidxLifecycle" }
 androidx-metrics = { group = "androidx.metrics", name = "metrics-performance", version.ref = "androidxMetrics" }
-androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "androidxNavigation" }
-androidx-navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "androidxNavigation" }
 androidx-test-core = { group = "androidx.test", name = "core", version.ref = "androidxTestCore" }
 androidx-test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "androidxEspresso" }
 androidx-test-ext = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "androidxTestExt" }
@@ -90,6 +87,8 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 kotlinx-serialization-protobuf = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-protobuf-jvm", version.ref = "kotlinxSerializationJson" }
 koin-bom = { group = "io.insert-koin", name = "koin-bom", version.ref = "koin" }
+koin-android = { group = "io.insert-koin", name = "koin-android" }
+koin-compose = { group = "io.insert-koin", name = "koin-androidx-compose" }
 ktor-client-core = { group = "io.ktor", name = "ktor-client-core", version.ref = "ktorClient" }
 ktor-client-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktorClient" }
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktorClient" }
@@ -111,12 +110,11 @@ room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "
 room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
 slf4j-simple = { group = "org.slf4j", name = "slf4j-simple", version.ref = "slf4j-simple" }
 shimmer-compose = { group = "com.valentinilk.shimmer", name = "compose-shimmer", version.ref = "shimmerCompose" }
-voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager"}
-voyager-screenmodel = { group = "cafe.adriel.voyager", name = "voyager-screenmodel", version.ref = "voyager"}
-voyager-bottomsheet = { group = "cafe.adriel.voyager", name = "voyager-bottom-sheet-navigator", version.ref = "voyager"}
-voyager-tabnavigator = { group = "cafe.adriel.voyager", name = "voyager-tab-navigator", version.ref = "voyager"}
-voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager"}
-voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager"}
+voyager-navigator = { group = "cafe.adriel.voyager", name = "voyager-navigator", version.ref = "voyager" }
+voyager-screenmodel = { group = "cafe.adriel.voyager", name = "voyager-screenmodel", version.ref = "voyager" }
+voyager-bottomsheet = { group = "cafe.adriel.voyager", name = "voyager-bottom-sheet-navigator", version.ref = "voyager" }
+voyager-transitions = { group = "cafe.adriel.voyager", name = "voyager-transitions", version.ref = "voyager" }
+voyager-koin = { group = "cafe.adriel.voyager", name = "voyager-koin", version.ref = "voyager" }
 
 # Dependencies of the included build-logic
 android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "androidGradlePlugin" }

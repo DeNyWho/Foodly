@@ -1,4 +1,4 @@
-package com.example.buildlogic.convention
+package com.example.foodly.buildlogic.convention
 
 import org.gradle.api.Project
 import org.gradle.api.artifacts.VersionCatalog

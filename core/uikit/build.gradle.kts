@@ -2,7 +2,6 @@ plugins {
     alias(libs.plugins.foodly.android.library.compose)
     alias(libs.plugins.foodly.android.library)
     alias(libs.plugins.foodly.android.koin)
-    alias(libs.plugins.kotlin.serialization)
 }
 
 android {
@@ -20,7 +19,6 @@ dependencies {
     lintPublish(projects.lint)
     implementation(projects.domain)
 
-    api(libs.kotlinx.collections.immutable)
     api(libs.airbnb.lottie)
     api(libs.paging.runtime)
     api(libs.paging.compose)
@@ -30,7 +28,6 @@ dependencies {
     api(libs.androidx.compose.material3)
     api(libs.androidx.compose.runtime)
     api(libs.androidx.compose.ui.util)
-    api(libs.androidx.core.ktx)
 
     api(libs.shimmer.compose)
 

@@ -1,5 +1,5 @@
 import com.android.build.api.dsl.LibraryExtension
-import com.example.buildlogic.convention.libs
+import com.example.foodly.buildlogic.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -22,6 +22,7 @@ class AndroidFeatureConventionPlugin : Plugin<Project> {
                 add("implementation", project(":data:source"))
                 add("implementation", project(":core:uikit"))
                 add("implementation", project(":core:common"))
+                add("implementation", project(":core:navigation"))
                 add("implementation", project(":domain"))
 
                 add("implementation", libs.findLibrary("androidx.lifecycle.runtimeCompose").get())

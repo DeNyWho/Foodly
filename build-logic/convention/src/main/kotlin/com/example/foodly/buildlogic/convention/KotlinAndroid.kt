@@ -1,7 +1,6 @@
 package com.example.foodly.buildlogic.convention
 
 import com.android.build.api.dsl.CommonExtension
-import com.example.buildlogic.convention.libs
 import org.gradle.api.JavaVersion
 import org.gradle.api.Project
 import org.gradle.api.plugins.JavaPluginExtension
@@ -19,7 +18,7 @@ internal fun Project.configureKotlinAndroid(
     commonExtension: CommonExtension<*, *, *, *, *, *>,
 ) {
     commonExtension.apply {
-        compileSdk = 35
+        compileSdk = 36
 
         defaultConfig {
             minSdk = 21

@@ -4,7 +4,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.foodly.feature.detail"
+    namespace = "com.example.foodly.feature.search"
 }
 
 dependencies {

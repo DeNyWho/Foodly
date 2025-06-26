@@ -1,11 +1,11 @@
 plugins {
     alias(libs.plugins.foodly.android.application)
     alias(libs.plugins.foodly.android.application.compose)
+    alias(libs.plugins.foodly.android.koin)
 }
 
 android {
     namespace = "com.example.foodly"
-    compileSdk = 35
 
     defaultConfig {
         applicationId = "com.example.foodly"
@@ -48,19 +48,18 @@ dependencies {
 
     implementation(projects.core.uikit)
     implementation(projects.core.common)
+    implementation(projects.core.navigation)
 
     implementation(libs.androidx.activity.compose)
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.core.splashscreen)
     implementation(libs.androidx.lifecycle.runtimeCompose)
-    implementation(libs.androidx.navigation.compose)
     implementation(libs.androidx.tracing.ktx)
     implementation(libs.kotlinx.coroutines.guava)
 
     debugImplementation(libs.androidx.compose.ui.testManifest)
 
     androidTestImplementation(libs.androidx.test.espresso.core)
-    androidTestImplementation(libs.androidx.navigation.testing)
 }
 
 dependencyGuard {

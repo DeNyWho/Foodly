@@ -1,9 +1,9 @@
 import com.android.build.api.dsl.LibraryExtension
 import com.android.build.api.variant.LibraryAndroidComponentsExtension
 import com.example.foodly.buildlogic.convention.configureKotlinAndroid
-import com.example.buildlogic.convention.configurePrintApksTask
-import com.example.buildlogic.convention.disableUnnecessaryAndroidTests
-import com.example.buildlogic.convention.libs
+import com.example.foodly.buildlogic.convention.configurePrintApksTask
+import com.example.foodly.buildlogic.convention.disableUnnecessaryAndroidTests
+import com.example.foodly.buildlogic.convention.libs
 import org.gradle.api.Plugin
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.configure
@@ -21,7 +21,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
 
             extensions.configure<LibraryExtension> {
                 configureKotlinAndroid(this)
-                defaultConfig.targetSdk = 35
+                defaultConfig.targetSdk = 36
                 defaultConfig.testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
                 testOptions.animationsDisabled = true
                 resourcePrefix =
