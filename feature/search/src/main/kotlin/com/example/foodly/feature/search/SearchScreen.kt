@@ -1,4 +1,4 @@
-package com.example.foodly.feature.home
+package com.example.foodly.feature.search
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
@@ -10,23 +10,23 @@ import androidx.compose.ui.Modifier
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
 
-internal class HomeScreen : Screen {
+internal class SearchScreen : Screen {
     @Composable
     override fun Content() {
-        val viewModel = koinScreenModel<HomeViewModel>()
+        val viewModel = koinScreenModel<SearchViewModel>()
 
-        HomeUI()
+        SearchUI()
     }
 }
 
 @Composable
-private fun HomeUI() {
+private fun SearchUI() {
     Box(
         modifier = Modifier.fillMaxSize(),
         contentAlignment = Alignment.Center,
     ) {
         Text(
-            text = "Home Screen",
+            text = "Search Screen",
             style = MaterialTheme.typography.titleLarge,
         )
     }

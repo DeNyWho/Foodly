@@ -42,6 +42,9 @@ android {
 dependencies {
     implementation(projects.feature.favourite)
     implementation(projects.feature.home)
+    implementation(projects.feature.search)
+    implementation(projects.feature.explore)
+    implementation(projects.feature.detail)
 
     implementation(projects.domain)
     implementation(projects.data.source)

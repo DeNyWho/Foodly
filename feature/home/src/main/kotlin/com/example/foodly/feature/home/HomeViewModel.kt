@@ -1,3 +1,9 @@
 package com.example.foodly.feature.home
 
-internal class HomeViewModel
+import cafe.adriel.voyager.core.model.ScreenModel
+
+internal class HomeViewModel(
+
+) : ScreenModel {
+
+}
