@@ -1,7 +1,6 @@
 package com.example.foodly.core.uikit.theme
 
 import android.app.Activity
-import android.view.Window
 import androidx.annotation.VisibleForTesting
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.MaterialTheme

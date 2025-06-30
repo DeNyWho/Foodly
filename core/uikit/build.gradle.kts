@@ -19,6 +19,8 @@ dependencies {
     lintPublish(projects.lint)
     implementation(projects.domain)
 
+    implementation(libs.voyager.tab.navigator)
+
     api(libs.airbnb.lottie)
     api(libs.paging.runtime)
     api(libs.paging.compose)

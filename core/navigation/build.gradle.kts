@@ -12,5 +12,6 @@ dependencies {
     api(libs.voyager.screenmodel)
     api(libs.voyager.bottomsheet)
     api(libs.voyager.transitions)
+    api(libs.voyager.tab.navigator)
     api(libs.voyager.koin)
 }
