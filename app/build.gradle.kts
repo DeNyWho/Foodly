@@ -40,11 +40,18 @@ android {
 }
 
 dependencies {
+    // feature
     implementation(projects.feature.favourite)
     implementation(projects.feature.home)
     implementation(projects.feature.search)
     implementation(projects.feature.explore)
     implementation(projects.feature.detail)
+
+    // data
+    implementation(projects.data.datastore)
+    implementation(projects.data.local)
+    implementation(projects.data.network)
+    implementation(projects.data.source)
 
     implementation(projects.domain)
     implementation(projects.data.source)

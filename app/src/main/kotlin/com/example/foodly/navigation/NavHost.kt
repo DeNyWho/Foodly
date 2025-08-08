@@ -1,8 +1,10 @@
 package com.example.foodly.navigation
 
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.systemBarsPadding
 import androidx.compose.material3.MaterialTheme
@@ -46,8 +48,12 @@ fun NavHost() {
                     testTagsAsResourceId = true
                 }
                 .systemBarsPadding(),
-            content = {
-                CurrentTab()
+            content = { padding ->
+                Box(
+                    Modifier.padding(padding)
+                ) {
+                    CurrentTab()
+                }
             },
             bottomBar = {
                 FoodlyNavigationBar (

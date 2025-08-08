@@ -2,6 +2,7 @@ package com.example.foodly
 
 import android.app.Application
 import cafe.adriel.voyager.core.registry.ScreenRegistry
+import com.example.foodly.data.network.di.networkModule
 import com.example.foodly.feature.detail.di.detailModule
 import com.example.foodly.feature.detail.di.detailModuleScreen
 import com.example.foodly.feature.explore.di.exploreModule
@@ -24,11 +25,15 @@ class FoodlyApplication : Application() {
             androidLogger()
             androidContext(this@FoodlyApplication)
             modules(
+                // feature
                 homeModule,
                 searchModule,
                 detailModule,
                 favouriteModule,
                 exploreModule,
+
+                // data
+                networkModule,
             )
         }
 
