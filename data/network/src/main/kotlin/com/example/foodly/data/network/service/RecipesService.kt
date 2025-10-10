@@ -15,7 +15,7 @@ import io.ktor.http.HttpMethod
 import io.ktor.http.encodedPath
 
 class RecipesService(private val client: HttpClient) {
-    suspend fun recipesByQueryLight(
+    suspend fun recipesByQuery(
         query: String? = null,
         cuisine: List<String>? = null,
         diet: String? = null,
@@ -92,14 +92,14 @@ class RecipesService(private val client: HttpClient) {
     }
 
     suspend fun quickAnswer(
-        number: Int = 1,
+        q: String,
     ): Resource<RecipeAnswerDTO> {
         val request = HttpRequestBuilder().apply {
             method = HttpMethod.Get
             url {
                 encodedPath = "${ApiEndpoints.RECIPES}/${ApiEndpoints.RECIPES_QUICK_ANSWER}"
 
-                parameter("number", number)
+                parameter("q", q)
             }
         }
 
