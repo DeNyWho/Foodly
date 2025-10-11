@@ -8,7 +8,9 @@ import org.koin.dsl.module
 
 val homeModule = module {
     factory<HomeViewModel> {
-        HomeViewModel()
+        HomeViewModel(
+            recipesByQueryUseCase = get(),
+        )
     }
 }
 
