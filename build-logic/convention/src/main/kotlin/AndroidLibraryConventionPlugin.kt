@@ -39,6 +39,7 @@ class AndroidLibraryConventionPlugin : Plugin<Project> {
                 add("androidTestImplementation", kotlin("test"))
                 add("testImplementation", kotlin("test"))
 
+                add("implementation", libs.findLibrary("kotlin.reflect").get())
                 add("implementation", libs.findLibrary("kotlinx.collections.immutable").get())
                 add("implementation", libs.findLibrary("androidx.tracing.ktx").get())
             }

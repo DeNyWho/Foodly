@@ -1,5 +1,6 @@
 package com.example.foodly.domain.model.food.recipe.type
 
+
 sealed class RecipeCuisinesType(val value: String) {
     data object African: RecipeCuisinesType("African")
     data object Asian: RecipeCuisinesType("Asian")
