@@ -2,6 +2,7 @@ package com.example.foodly.data.network.di
 
 import com.example.foodly.data.network.BuildConfig
 import com.example.foodly.data.network.api.ApiEndpoints
+import com.example.foodly.data.network.service.RecipesService
 import io.ktor.client.HttpClient
 import io.ktor.client.engine.okhttp.OkHttp
 import io.ktor.client.plugins.HttpTimeout
@@ -50,4 +51,5 @@ val networkModule = module {
             }
         }
     }
+    single<RecipesService> { RecipesService(get<HttpClient>()) }
 }
