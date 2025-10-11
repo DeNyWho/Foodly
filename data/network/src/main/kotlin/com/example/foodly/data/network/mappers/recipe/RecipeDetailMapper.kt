@@ -4,8 +4,8 @@ import com.example.foodly.data.network.models.dto.recipe.detail.RecipeDetailDTO
 import com.example.foodly.data.network.models.dto.recipe.ingredients.RecipeIngredientDTO
 import com.example.foodly.data.network.models.dto.recipe.nutrition.RecipeNutrientDTO
 import com.example.foodly.data.network.models.dto.recipe.nutrition.RecipeNutritionDTO
-import com.example.foodly.domain.model.food.recipe.detail.RecipeDetail
-import com.example.foodly.domain.model.food.recipe.ingredients.RecipeIngredient
+import com.example.foodly.domain.model.food.recipe.RecipeDetail
+import com.example.foodly.domain.model.food.recipe.RecipeIngredient
 import com.example.foodly.domain.model.food.recipe.nutrition.RecipeNutrient
 import com.example.foodly.domain.model.food.recipe.nutrition.RecipeNutrition
 

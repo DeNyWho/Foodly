@@ -1,4 +1,4 @@
-package com.example.foodly.domain.model.food.recipe.light
+package com.example.foodly.domain.model.food.recipe
 
 import kotlinx.serialization.SerialName
 

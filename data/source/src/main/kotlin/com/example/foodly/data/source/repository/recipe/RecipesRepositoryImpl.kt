@@ -6,8 +6,8 @@ import com.example.foodly.data.network.service.RecipesService
 import com.example.foodly.domain.model.common.request.Resource
 import com.example.foodly.domain.model.common.request.StateListWrapper
 import com.example.foodly.domain.model.common.request.StateWrapper
-import com.example.foodly.domain.model.food.recipe.detail.RecipeDetail
-import com.example.foodly.domain.model.food.recipe.light.RecipeLight
+import com.example.foodly.domain.model.food.recipe.RecipeDetail
+import com.example.foodly.domain.model.food.recipe.RecipeLight
 import com.example.foodly.domain.repository.recipe.RecipesRepository
 import kotlinx.collections.immutable.toPersistentList
 import kotlinx.coroutines.Dispatchers

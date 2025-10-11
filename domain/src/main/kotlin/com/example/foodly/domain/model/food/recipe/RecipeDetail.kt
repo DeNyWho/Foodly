@@ -1,7 +1,6 @@
-package com.example.foodly.domain.model.food.recipe.detail
+package com.example.foodly.domain.model.food.recipe
 
 import androidx.compose.runtime.Immutable
-import com.example.foodly.domain.model.food.recipe.ingredients.RecipeIngredient
 import com.example.foodly.domain.model.food.recipe.nutrition.RecipeNutrition
 import kotlinx.serialization.SerialName
 

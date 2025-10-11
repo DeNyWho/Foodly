@@ -1,7 +1,7 @@
 package com.example.foodly.domain.usecase.recipe
 
 import com.example.foodly.domain.model.common.request.StateWrapper
-import com.example.foodly.domain.model.food.recipe.detail.RecipeDetail
+import com.example.foodly.domain.model.food.recipe.RecipeDetail
 import com.example.foodly.domain.repository.recipe.RecipesRepository
 import kotlinx.coroutines.flow.Flow
 
