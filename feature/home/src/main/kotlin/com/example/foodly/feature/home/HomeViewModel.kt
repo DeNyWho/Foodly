@@ -39,7 +39,6 @@ internal class HomeViewModel(
             HomeIntent.RefreshData -> refreshData()
             is HomeIntent.UpdateMealType -> updateMealType(intent.mealType)
         }
-
     }
 
     private fun loadInitialData() {
@@ -77,7 +76,8 @@ internal class HomeViewModel(
 
     private fun getFastRecipes() {
         recipesByQueryUseCase.invoke(
-
+            sort = RecipeSort.Popular.value,
+            maxReadyTime = 30,
         ).onEach { result ->
             _state.update {
                 it.copy(
@@ -93,7 +93,7 @@ internal class HomeViewModel(
         ).onEach { result ->
             _state.update {
                 it.copy(
-                    fastRecipes = result
+                    healthyRecipes = result
                 )
             }
         }.launchIn(screenModelScope)

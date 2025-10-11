@@ -19,6 +19,12 @@ private val NunitoFontFamily = FontFamily(
     Font(R.font.nunito_bold, FontWeight.Bold, FontStyle.Normal),
 )
 
+private val InterFontFamily = FontFamily(
+    Font(R.font.inter_regular, FontWeight.Normal, FontStyle.Normal),
+    Font(R.font.inter_medium, FontWeight.Medium, FontStyle.Normal),
+    Font(R.font.inter_bold, FontWeight.Bold, FontStyle.Normal),
+)
+
 private const val lineHeightMultiplier = 1.15
 
 /**
@@ -35,42 +41,42 @@ internal fun foodlyTypography(fontSizePrefs: FontSizePrefs): Typography {
                 alignment = Alignment.Bottom,
                 trim = Trim.LastLineBottom,
             ),
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         titleMedium = TextStyle(
             fontWeight = FontWeight.Bold,
             fontSize = (16 + fontSizePrefs.fontSizeExtra).sp,
             lineHeight = ((16 + fontSizePrefs.fontSizeExtra) * lineHeightMultiplier).sp,
             letterSpacing = 0.1.sp,
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         titleSmall = TextStyle(
             fontWeight = FontWeight.Medium,
             fontSize = (14 + fontSizePrefs.fontSizeExtra).sp,
             lineHeight = ((14 + fontSizePrefs.fontSizeExtra) * lineHeightMultiplier).sp,
             letterSpacing = 0.1.sp,
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         bodyLarge = TextStyle(
             fontWeight = FontWeight.Normal,
             fontSize = (16 + fontSizePrefs.fontSizeExtra).sp,
             lineHeight = ((16 + fontSizePrefs.fontSizeExtra) * lineHeightMultiplier).sp,
             letterSpacing = 0.25.sp,
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         bodyMedium = TextStyle(
             fontWeight = FontWeight.Normal,
             fontSize = (14 + fontSizePrefs.fontSizeExtra).sp,
             lineHeight = ((14 + fontSizePrefs.fontSizeExtra) * lineHeightMultiplier).sp,
             letterSpacing = 0.25.sp,
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         bodySmall = TextStyle(
             fontWeight = FontWeight.Normal,
             fontSize = (12 + fontSizePrefs.fontSizeExtra).sp,
             lineHeight = ((12 + fontSizePrefs.fontSizeExtra) * lineHeightMultiplier).sp,
             letterSpacing = 0.4.sp,
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         // Used for Button
         labelLarge = TextStyle(
@@ -82,7 +88,7 @@ internal fun foodlyTypography(fontSizePrefs: FontSizePrefs): Typography {
                 alignment = Alignment.Center,
                 trim = Trim.LastLineBottom,
             ),
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         ),
         labelSmall = TextStyle(
             fontWeight = FontWeight.Bold,
@@ -93,7 +99,7 @@ internal fun foodlyTypography(fontSizePrefs: FontSizePrefs): Typography {
                 alignment = Alignment.Center,
                 trim = Trim.LastLineBottom,
             ),
-            fontFamily = NunitoFontFamily,
+            fontFamily = InterFontFamily,
         )
     )
 }

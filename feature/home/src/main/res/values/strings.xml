@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="feature_home_navigation_tab_title">Главная</string>
+    <string name="feature_home_navigation_tab_title">Home</string>
+    <string name="feature_home_section_header_title_popular">Popular Recipes</string>
+    <string name="feature_home_section_header_title_fast">Recipes under 30 minutes</string>
+    <string name="feature_home_section_header_title_healthy">Healthy recipes</string>
 </resources>
