@@ -1,5 +1,6 @@
 package com.example.foodly.feature.home
 
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,11 +14,14 @@ import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import cafe.adriel.voyager.core.screen.Screen
 import cafe.adriel.voyager.koin.koinScreenModel
 import com.example.foodly.core.uikit.component.slider.SliderComponentDefaults
 import com.example.foodly.core.uikit.component.slider.recipe.RecipeSliderComponent
+import com.example.foodly.feature.home.components.category.CategorySliderComponent
+import com.example.foodly.feature.home.components.cuisines.CuisinesSliderComponent
 import com.example.foodly.feature.home.model.HomeState
 import java.time.LocalDate
 
@@ -46,7 +50,13 @@ private fun HomeUI(
         modifier = modifier
             .fillMaxWidth(),
         state = lazyColumnState,
+        verticalArrangement = Arrangement.spacedBy(4.dp),
     ) {
+        item {
+            CategorySliderComponent(
+                onCategoryClick = {},
+            )
+        }
         item {
             RecipeSliderComponent(
                 headerTitle = stringResource(R.string.feature_home_section_header_title_popular),
@@ -67,6 +77,13 @@ private fun HomeUI(
                 onItemClick = onRecipeClick,
                 isMoreVisible = true,
                 onMoreClick = {
+
+                },
+            )
+        }
+        item {
+            CuisinesSliderComponent(
+                onCuisineClick = {
 
                 },
             )

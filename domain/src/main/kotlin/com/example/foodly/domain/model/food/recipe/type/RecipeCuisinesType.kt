@@ -1,6 +1,5 @@
 package com.example.foodly.domain.model.food.recipe.type
 
-
 sealed class RecipeCuisinesType(val value: String) {
     data object African: RecipeCuisinesType("African")
     data object Asian: RecipeCuisinesType("Asian")
@@ -29,4 +28,11 @@ sealed class RecipeCuisinesType(val value: String) {
     data object Spanish: RecipeCuisinesType("Spanish")
     data object Thai: RecipeCuisinesType("Thai")
     data object Vietnamese: RecipeCuisinesType("Vietnamese")
+
+    companion object {
+        private const val CDN_BASE = "https://s3.twcstorage.ru/302c64e9-737c3e3e-4977-41f9-bceb-cca468e0257c/foodly/Cuisines"
+    }
+
+    val imageUrl: String
+        get() = "$CDN_BASE/${value}/${value.replace(" ", "_")}.png"
 }

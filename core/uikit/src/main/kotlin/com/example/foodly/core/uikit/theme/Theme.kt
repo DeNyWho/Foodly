@@ -31,7 +31,7 @@ val DarkColorScheme = darkColorScheme(
     surface = grey700,
     primary = cinnabar,
     onPrimary = grey50,
-    surfaceContainer = blue900,
+    surfaceContainer = stoneGrey,
     onPrimaryContainer = grey50,
     error = grey50,
 )
@@ -50,7 +50,7 @@ val LightColorScheme = lightColorScheme(
     surface = grey700,
     primary = cinnabar,
     onPrimary = grey50,
-    surfaceContainer = grey50,
+    surfaceContainer = isabelline,
     onPrimaryContainer = grey50,
     error = Color.Red,
 )

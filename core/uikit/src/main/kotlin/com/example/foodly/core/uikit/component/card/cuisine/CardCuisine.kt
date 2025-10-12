@@ -1,7 +1,8 @@
-package com.example.foodly.core.uikit.component.card.recipe
+package com.example.foodly.core.uikit.component.card.cuisine
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -13,10 +14,13 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
@@ -25,31 +29,37 @@ import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
 import coil.request.ImageRequest
+import com.example.foodly.core.uikit.R
+import com.example.foodly.core.uikit.component.card.cuisine.param.CardCuisinePreviewParam
+import com.example.foodly.core.uikit.component.card.cuisine.param.CardCuisineProvider
+import com.example.foodly.core.uikit.component.card.recipe.CardRecipe
+import com.example.foodly.core.uikit.component.card.recipe.CardRecipeDefaults
 import com.example.foodly.core.uikit.component.card.recipe.param.CardRecipePreviewParam
 import com.example.foodly.core.uikit.component.card.recipe.param.CardRecipeProvider
 import com.example.foodly.core.uikit.util.DefaultPreview
 import com.example.foodly.domain.model.food.recipe.RecipeLight
+import com.example.foodly.domain.model.food.recipe.type.RecipeCuisinesType
 
 @Composable
-fun CardRecipe(
+fun CardCuisine(
     modifier: Modifier = Modifier,
-    data: RecipeLight,
-    thumbnailHeight: Dp = CardRecipeDefaults.Height.Default,
-    thumbnailWidth: Dp = CardRecipeDefaults.Width.Default,
-    textAlign: TextAlign = TextAlign.Start,
-    onClick: () -> Unit,
+    data: RecipeCuisinesType,
+    thumbnailWidth: Dp = CardCuisineDefaults.Width.Default,
+    thumbnailHeight: Dp = CardCuisineDefaults.Height.Default,
+    onClick: (String) -> Unit,
 ) {
-    Column(
+    Box(
         modifier = modifier
             .width(thumbnailWidth)
+            .height(thumbnailHeight)
+            .clip(MaterialTheme.shapes.medium)
             .clickable {
-                onClick.invoke()
+                onClick.invoke(data.value)
             }
     ) {
         Card(
             modifier = Modifier
-                .fillMaxWidth()
-                .height(thumbnailHeight),
+                .fillMaxSize(),
             elevation = CardDefaults.elevatedCardElevation(
                 defaultElevation = 4.dp,
             ),
@@ -61,7 +71,7 @@ fun CardRecipe(
                     .fillMaxSize()
                     .clip(MaterialTheme.shapes.medium),
                 model = ImageRequest.Builder(LocalContext.current)
-                    .data(data.image)
+                    .data(data.imageUrl)
                     .build(),
                 contentDescription = "Content Thumbnail",
                 contentScale = ContentScale.Crop,
@@ -71,33 +81,38 @@ fun CardRecipe(
             )
         }
 
-        Text(
-            text = data.title,
-            modifier = Modifier
+        Box(
+            modifier
+                .background(Color.Black.copy(0.5f))
                 .fillMaxWidth()
-                .padding(top = 8.dp),
-            maxLines = 2,
-            overflow = TextOverflow.Ellipsis,
-            color = MaterialTheme.colorScheme.onBackground.copy(0.8f),
-            textAlign = textAlign,
-            style = MaterialTheme.typography.titleSmall,
-        )
-
+                .align(Alignment.BottomEnd)
+        ) {
+            Text(
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .padding(horizontal = 4.dp, vertical = 8.dp),
+                text = data.value,
+                overflow = TextOverflow.Ellipsis,
+                maxLines = 2,
+                textAlign = TextAlign.Center,
+                color = MaterialTheme.colorScheme.primary,
+                style = MaterialTheme.typography.bodyMedium,
+            )
+        }
     }
 }
 
 @Preview
 @Composable
-private fun PreviewCardRecipe(
-    @PreviewParameter(CardRecipeProvider::class) param: CardRecipePreviewParam,
+private fun PreviewCardCuisine(
+    @PreviewParameter(CardCuisineProvider::class) param: CardCuisinePreviewParam,
 ) {
     DefaultPreview {
-        CardRecipe(
+        CardCuisine(
             modifier = param.modifier,
             data = param.data,
             thumbnailHeight = param.thumbnailHeight,
             onClick = param.onClick,
         )
-
     }
 }
