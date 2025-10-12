@@ -6,8 +6,8 @@ import com.example.foodly.domain.model.common.request.StateListWrapper
 import com.example.foodly.domain.model.food.recipe.RecipeSort
 import com.example.foodly.domain.model.food.recipe.type.RecipeMealType
 import com.example.foodly.domain.usecase.recipe.RecipesByQueryUseCase
-import com.example.foodly.feature.home.model.HomeEffect
-import com.example.foodly.feature.home.model.HomeIntent
+import com.example.foodly.feature.home.model.HomeAction
+import com.example.foodly.feature.home.model.HomeEvent
 import com.example.foodly.feature.home.model.HomeState
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -26,18 +26,19 @@ internal class HomeViewModel(
     private val _state = MutableStateFlow(HomeState())
     val state: StateFlow<HomeState> = _state.asStateFlow()
 
-    private val _effect = MutableSharedFlow<HomeEffect>()
-    val effect: SharedFlow<HomeEffect> = _effect.asSharedFlow()
+    private val _action = MutableSharedFlow<HomeAction>()
+    val action: SharedFlow<HomeAction> = _action.asSharedFlow()
 
     init {
-        handleIntent(HomeIntent.LoadInitialData)
+        handleEvent(HomeEvent.LoadInitialData)
     }
 
-    fun handleIntent(intent: HomeIntent) {
+    fun handleEvent(intent: HomeEvent) {
         when(intent) {
-            HomeIntent.LoadInitialData -> loadInitialData()
-            HomeIntent.RefreshData -> refreshData()
-            is HomeIntent.UpdateMealType -> updateMealType(intent.mealType)
+            HomeEvent.LoadInitialData -> loadInitialData()
+            HomeEvent.RefreshData -> refreshData()
+            is HomeEvent.UpdateMealType -> updateMealType(intent.mealType)
+            is HomeEvent.OnRecipeCardClick -> onRecipeCardClick(intent.recipeId)
         }
     }
 
@@ -48,6 +49,12 @@ internal class HomeViewModel(
             launch { getFastRecipes() }
             launch { getHealthyRecipes() }
         }
+    }
+
+    private fun onRecipeCardClick(recipeId: Int) = screenModelScope.launch {
+        _action.emit(
+            HomeAction.NavigateToRecipeDetail(recipeId)
+        )
     }
 
     private fun getMealTypeRecipes() {
