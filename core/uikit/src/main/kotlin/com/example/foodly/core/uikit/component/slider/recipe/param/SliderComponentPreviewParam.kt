@@ -46,9 +46,8 @@ internal class SliderComponentProvider :
                 headerModifier = SliderComponentDefaults.Default,
                 headerTitle = "Scrollable Default",
                 contentArrangement = CardRecipeDefaults.HorizontalArrangement.Default,
-                contentState = StateListWrapper(
+                contentState = StateListWrapper.success(
                     data = GlobalParams.DataRecipes,
-                    isLoading = false
                 )
             ),
         ).asSequence()

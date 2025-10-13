@@ -76,11 +76,11 @@ internal class RecipesRepositoryImpl(
                 is Resource.Success -> {
                     val data = recipesResult.data.results.map { it.toLight() }.toPersistentList()
 
-                    StateListWrapper(data = data)
+                    StateListWrapper.success(data = data)
                 }
 
                 is Resource.Error -> {
-                    StateListWrapper(error = recipesResult.error)
+                    StateListWrapper.error(error = recipesResult.error)
                 }
 
                 is Resource.Loading -> {
@@ -96,17 +96,19 @@ internal class RecipesRepositoryImpl(
         number: Int,
     ): Flow<StateListWrapper<RecipeLight>> {
         return flow {
+            emit(StateListWrapper.loading())
+
             val randomRecipesResult = recipesService.randomRecipes(number)
 
             val state = when(randomRecipesResult) {
                 is Resource.Success -> {
                     val data = randomRecipesResult.data.recipes.map { it.toLight() }.toPersistentList()
 
-                    StateListWrapper(data)
+                    StateListWrapper.success(data)
                 }
 
                 is Resource.Error -> {
-                    StateListWrapper(error = randomRecipesResult.error)
+                    StateListWrapper.error(error = randomRecipesResult.error)
                 }
 
                 is Resource.Loading -> {
@@ -122,17 +124,19 @@ internal class RecipesRepositoryImpl(
         q: String
     ): Flow<StateWrapper<String>> {
         return flow {
+            emit(StateWrapper.loading())
+
             val quickAnswerResult = recipesService.quickAnswer(q)
 
             val state = when(quickAnswerResult) {
                 is Resource.Success -> {
                     val data = quickAnswerResult.data.answer
 
-                    StateWrapper(data)
+                    StateWrapper.success(data)
                 }
 
                 is Resource.Error -> {
-                    StateWrapper(error = quickAnswerResult.error)
+                    StateWrapper.error(error = quickAnswerResult.error)
                 }
 
                 is Resource.Loading -> {
@@ -149,6 +153,8 @@ internal class RecipesRepositoryImpl(
         includeNutrition: Boolean,
     ): Flow<StateWrapper<RecipeDetail>> {
         return flow {
+            emit(StateWrapper.loading())
+
             val recipeInformationResult = recipesService.recipeInformation(
                 id = id,
                 includeNutrition = includeNutrition,
@@ -158,11 +164,11 @@ internal class RecipesRepositoryImpl(
                 is Resource.Success -> {
                     val data = recipeInformationResult.data.toDetail()
 
-                    StateWrapper(data)
+                    StateWrapper.success(data)
                 }
 
                 is Resource.Error -> {
-                    StateWrapper(error = recipeInformationResult.error)
+                    StateWrapper.error(error = recipeInformationResult.error)
                 }
 
                 is Resource.Loading -> {

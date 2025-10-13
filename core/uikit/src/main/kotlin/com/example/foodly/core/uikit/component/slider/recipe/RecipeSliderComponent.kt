@@ -42,18 +42,24 @@ fun RecipeSliderComponent(
     isMoreVisible: Boolean = false,
     onMoreClick: () -> Unit = { },
 ) {
-    if (contentState.isLoading) {
-        SliderHeaderShimmer(
-            modifier = headerModifier,
-            shimmerInstance = shimmer,
-        )
-    } else if (contentState.data.isNotEmpty()) {
-        SliderHeader(
-            modifier = headerModifier,
-            title = headerTitle,
-            isMoreVisible = isMoreVisible,
-            onMoreClick = onMoreClick,
-        )
+    when(contentState) {
+        is StateListWrapper.Loading -> {
+            SliderHeaderShimmer(
+                modifier = headerModifier,
+                shimmerInstance = shimmer,
+            )
+        }
+        is StateListWrapper.Success -> {
+            SliderHeader(
+                modifier = headerModifier,
+                title = headerTitle,
+                isMoreVisible = isMoreVisible,
+                onMoreClick = onMoreClick,
+            )
+        }
+        is StateListWrapper.Error -> {
+
+        }
     }
 
     LazyRow(
@@ -61,24 +67,30 @@ fun RecipeSliderComponent(
         contentPadding = contentPadding,
         horizontalArrangement = contentArrangement,
     ) {
-        if (contentState.isLoading) {
-            showCardRecipeShimmer(
-                shimmerInstance = shimmer,
-                thumbnailHeight = thumbnailHeight,
-                thumbnailWidth = thumbnailWidth,
-            )
-        } else if (contentState.data.isNotEmpty()) {
-            items(
-                contentState.data,
-                key = { it.id },
-            ) { data ->
-                CardRecipe(
-                    data = data,
+        when(contentState) {
+            is StateListWrapper.Loading -> {
+                showCardRecipeShimmer(
+                    shimmerInstance = shimmer,
                     thumbnailHeight = thumbnailHeight,
                     thumbnailWidth = thumbnailWidth,
-                    textAlign = textAlign,
-                    onClick = { onItemClick.invoke(data.id) },
                 )
+            }
+            is StateListWrapper.Success -> {
+                items(
+                    contentState.data,
+                    key = { it.id },
+                ) { data ->
+                    CardRecipe(
+                        data = data,
+                        thumbnailHeight = thumbnailHeight,
+                        thumbnailWidth = thumbnailWidth,
+                        textAlign = textAlign,
+                        onClick = { onItemClick.invoke(data.id) },
+                    )
+                }
+            }
+            is StateListWrapper.Error -> {
+
             }
         }
     }

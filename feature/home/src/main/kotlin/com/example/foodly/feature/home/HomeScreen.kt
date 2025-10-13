@@ -51,8 +51,6 @@ internal class HomeScreen : Screen {
         state: HomeState,
         eventHandler: (HomeEvent) -> Unit,
     ) {
-        println(state.popularRecipes.error)
-
         LazyColumn(
             modifier = modifier
                 .fillMaxWidth(),
