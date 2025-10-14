@@ -3,8 +3,8 @@ package com.example.foodly.feature.detail
 import cafe.adriel.voyager.core.model.ScreenModel
 import cafe.adriel.voyager.core.model.screenModelScope
 import com.example.foodly.domain.usecase.recipe.RecipeInformationUseCase
-import com.example.foodly.feature.detail.model.DetailEffect
-import com.example.foodly.feature.detail.model.DetailIntent
+import com.example.foodly.feature.detail.model.DetailAction
+import com.example.foodly.feature.detail.model.DetailEvent
 import com.example.foodly.feature.detail.model.DetailState
 import kotlinx.coroutines.flow.MutableSharedFlow
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -24,17 +24,17 @@ internal class DetailViewModel (
     private val _state = MutableStateFlow(DetailState())
     val state: StateFlow<DetailState> = _state.asStateFlow()
 
-    private val _effect = MutableSharedFlow<DetailEffect>()
-    val effect: SharedFlow<DetailEffect> = _effect.asSharedFlow()
+    private val _effect = MutableSharedFlow<DetailAction>()
+    val effect: SharedFlow<DetailAction> = _effect.asSharedFlow()
 
     init {
-        handleIntent(DetailIntent.LoadInitialData)
+        handleIntent(DetailEvent.LoadInitialData)
     }
 
-    fun handleIntent(detailIntent: DetailIntent) {
+    fun handleIntent(detailIntent: DetailEvent) {
         when(detailIntent) {
-            DetailIntent.LoadInitialData -> loadInitialData()
-            DetailIntent.RefreshData -> refreshData()
+            DetailEvent.LoadInitialData -> loadInitialData()
+            DetailEvent.RefreshData -> refreshData()
         }
     }
 
