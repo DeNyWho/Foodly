@@ -11,8 +11,12 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import com.example.foodly.core.uikit.param.GlobalParams
+import com.example.foodly.core.uikit.util.DefaultPreview
 import com.example.foodly.domain.model.food.recipe.RecipeDetail
+import com.example.foodly.feature.detail.components.top.RecipeImageComponent
 
 @Composable
 internal fun RecipeTimeComponent(
@@ -85,5 +89,15 @@ internal fun RecipeTimeComponent(
             )
         }
     }
+}
 
+@Preview
+@Composable
+private fun PreviewRecipeTimeComponent() {
+    DefaultPreview {
+        RecipeTimeComponent(
+            recipe = GlobalParams.DataRecipeDetail,
+            verticalArrangement = Arrangement.SpaceAround,
+        )
+    }
 }

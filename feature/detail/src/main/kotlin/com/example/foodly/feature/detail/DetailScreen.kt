@@ -17,6 +17,7 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalConfiguration
 import androidx.compose.ui.platform.LocalDensity
@@ -28,6 +29,8 @@ import cafe.adriel.voyager.koin.koinScreenModel
 import com.example.foodly.core.uikit.component.topbar.SimpleTopBar
 import com.example.foodly.domain.model.common.request.StateWrapper
 import com.example.foodly.domain.model.food.recipe.RecipeDetail
+import com.example.foodly.feature.detail.components.ingredients.RecipeIngredientsComponent
+import com.example.foodly.feature.detail.components.nutrition.RecipeNutritionComponent
 import com.example.foodly.feature.detail.components.time.RecipeTimeComponent
 import com.example.foodly.feature.detail.components.top.RecipeImageComponent
 import com.example.foodly.feature.detail.model.DetailState
@@ -93,8 +96,6 @@ internal class DetailScreen(val recipeId: Int) : Screen {
         val screenWidth = containerSize.width.dp / density
         val isLandscape = configuration.orientation == Configuration.ORIENTATION_LANDSCAPE
 
-        println("WFDSFS = $screenWidth")
-
         when {
             screenWidth > 600.dp || (isLandscape && screenWidth > 480.dp) -> DetailContent(
                 modifier = modifier
@@ -149,6 +150,32 @@ internal class DetailScreen(val recipeId: Int) : Screen {
                     color = MaterialTheme.colorScheme.surfaceContainer,
                 )
             }
+            item {
+                RecipeIngredientsComponent(
+                    recipe = recipe,
+                )
+            }
+            item {
+                HorizontalDivider(
+                    modifier = Modifier
+                        .padding(vertical = 8.dp),
+                    thickness = 2.dp,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                )
+            }
+            item {
+                RecipeNutritionComponent(
+                    recipeDetail = recipe,
+                )
+            }
+            item {
+                HorizontalDivider(
+                    modifier = Modifier
+                        .padding(vertical = 8.dp),
+                    thickness = 2.dp,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                )
+            }
         }
     }
 
@@ -181,7 +208,7 @@ internal class DetailScreen(val recipeId: Int) : Screen {
                     RecipeTimeComponent(
                         modifier = Modifier
                             .weight(0.8f)
-                            .padding(vertical = 16.dp)
+                            .padding(top = 16.dp)
                             .height(220.dp),
                         recipe = recipe,
                         verticalArrangement = Arrangement.SpaceAround,
@@ -190,6 +217,39 @@ internal class DetailScreen(val recipeId: Int) : Screen {
             }
             item {
                 HorizontalDivider(
+                    modifier = Modifier
+                        .padding(vertical = 8.dp),
+                    thickness = 2.dp,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                )
+            }
+            item {
+                RecipeIngredientsComponent(
+                    recipe = recipe,
+                )
+            }
+            item {
+                HorizontalDivider(
+                    modifier = Modifier
+                        .padding(vertical = 8.dp),
+                    thickness = 2.dp,
+                    color = MaterialTheme.colorScheme.surfaceContainer,
+                )
+            }
+            item {
+                RecipeNutritionComponent(
+                    recipeDetail = recipe,
+                    horizontalArrangement = Arrangement
+                        .spacedBy(
+                            space = 24.dp,
+                            alignment = Alignment.Start,
+                        ),
+                )
+            }
+            item {
+                HorizontalDivider(
+                    modifier = Modifier
+                        .padding(vertical = 8.dp),
                     thickness = 2.dp,
                     color = MaterialTheme.colorScheme.surfaceContainer,
                 )
