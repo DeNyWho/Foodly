@@ -21,6 +21,6 @@ data class RecipeDetail(
     val healthScore: Double = 0.0,
     val extendedIngredients: List<RecipeIngredient> = listOf(),
     val nutrition: RecipeNutrition = RecipeNutrition(),
-    @SerialName("summary")
     val summary: String = "",
+    val instructions: String = "",
 )

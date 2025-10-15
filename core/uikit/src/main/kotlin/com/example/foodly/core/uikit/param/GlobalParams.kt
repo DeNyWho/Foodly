@@ -69,5 +69,6 @@ object GlobalParams {
             )
         ),
         summary = "",
+        instructions = "instructions",
     )
 }

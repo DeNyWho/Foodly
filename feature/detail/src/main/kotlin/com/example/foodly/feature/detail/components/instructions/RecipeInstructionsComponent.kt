@@ -1,7 +1,9 @@
-package com.example.foodly.feature.detail.components.ingredients
+package com.example.foodly.feature.detail.components.instructions
 
+import android.text.Html
+import android.text.Spanned
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -15,35 +17,33 @@ import com.example.foodly.domain.model.food.recipe.RecipeDetail
 import com.example.foodly.feature.detail.R
 
 @Composable
-internal fun RecipeIngredientsComponent(
+internal fun RecipeInstructionsComponent(
     modifier: Modifier = Modifier,
     recipe: RecipeDetail,
 ) {
     Column(
         modifier = modifier,
+        verticalArrangement = Arrangement.spacedBy(8.dp),
     ) {
         Text(
-            modifier = Modifier.padding(bottom = 8.dp),
-            text = stringResource(R.string.feature_detail_ingredients_title),
+            text = stringResource(R.string.feature_detail_instructions_title),
             color = MaterialTheme.colorScheme.onBackground,
             style = MaterialTheme.typography.titleMedium,
         )
 
-        recipe.extendedIngredients.forEach { ingredient ->
-            Text(
-                text = ingredient.original,
-                color = MaterialTheme.colorScheme.onBackground,
-                style = MaterialTheme.typography.bodyMedium,
-            )
-        }
+        Text(
+            text = Html.fromHtml(recipe.instructions, Html.FROM_HTML_MODE_LEGACY).toString(),
+            color = MaterialTheme.colorScheme.onBackground,
+            style = MaterialTheme.typography.bodyMedium,
+        )
     }
 }
 
 @Preview
 @Composable
-private fun PreviewRecipeIngredientsComponent() {
+private fun PreviewRecipeInstructionsComponent() {
     DefaultPreview {
-        RecipeIngredientsComponent(
+        RecipeInstructionsComponent(
             recipe = GlobalParams.DataRecipeDetail,
         )
     }

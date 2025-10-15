@@ -6,4 +6,5 @@ import androidx.compose.runtime.Immutable
 internal sealed interface DetailEvent {
     data object LoadInitialData: DetailEvent
     data object RefreshData: DetailEvent
+    data object OnBack: DetailEvent
 }

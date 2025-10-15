@@ -26,6 +26,7 @@ fun RecipeDetailDTO.toDetail(): RecipeDetail = RecipeDetail(
     extendedIngredients = extendedIngredients.map { it.toIngredient() },
     nutrition = nutrition.toNutrition(),
     summary = summary,
+    instructions = instructions,
 )
 
 fun RecipeIngredientDTO.toIngredient(): RecipeIngredient = RecipeIngredient(

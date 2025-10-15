@@ -24,17 +24,18 @@ internal class DetailViewModel (
     private val _state = MutableStateFlow(DetailState())
     val state: StateFlow<DetailState> = _state.asStateFlow()
 
-    private val _effect = MutableSharedFlow<DetailAction>()
-    val effect: SharedFlow<DetailAction> = _effect.asSharedFlow()
+    private val _action = MutableSharedFlow<DetailAction>()
+    val action: SharedFlow<DetailAction> = _action.asSharedFlow()
 
     init {
-        handleIntent(DetailEvent.LoadInitialData)
+        handleEvent(DetailEvent.LoadInitialData)
     }
 
-    fun handleIntent(detailIntent: DetailEvent) {
+    fun handleEvent(detailIntent: DetailEvent) {
         when(detailIntent) {
             DetailEvent.LoadInitialData -> loadInitialData()
             DetailEvent.RefreshData -> refreshData()
+            DetailEvent.OnBack -> onBack()
         }
     }
 
@@ -56,6 +57,12 @@ internal class DetailViewModel (
             }
 
         }.launchIn(screenModelScope)
+    }
+
+    private fun onBack() = screenModelScope.launch {
+        _action.emit(
+            DetailAction.NavigateUp
+        )
     }
 
     private fun refreshData() {

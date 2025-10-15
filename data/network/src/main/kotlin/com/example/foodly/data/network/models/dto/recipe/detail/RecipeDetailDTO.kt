@@ -39,4 +39,6 @@ data class RecipeDetailDTO(
     val nutrition: RecipeNutritionDTO = RecipeNutritionDTO(),
     @SerialName("summary")
     val summary: String = "",
+    @SerialName("instructions")
+    val instructions: String = "",
 )

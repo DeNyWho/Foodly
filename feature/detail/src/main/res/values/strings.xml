@@ -2,4 +2,5 @@
 <resources>
     <string name="feature_detail_nutrition_title">Nutrition (Per Serving)</string>
     <string name="feature_detail_ingredients_title">Ingredients</string>
+    <string name="feature_detail_instructions_title">Instructions</string>
 </resources>
